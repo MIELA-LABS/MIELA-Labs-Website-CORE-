@@ -420,23 +420,23 @@ export default function App() {
               </p>
               
               <div className="space-y-8">
-                <a href="mailto:hakanyorganci@gmail.com" className="flex items-center gap-6 group">
+                <a href="mailto:mielalabs@proton.me" className="flex items-center gap-6 group">
                   <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#D4AF37]/20 group-hover:border-[#D4AF37]/50 transition-all">
                     <Mail className="w-6 h-6 text-white/70 group-hover:text-[#D4AF37] transition-colors" />
                   </div>
                   <div>
                     <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 font-bold mb-1">Direct Email</div>
-                    <div className="text-xl font-light text-white/90 group-hover:text-white transition-colors">hakanyorganci@gmail.com</div>
+                    <div className="text-xl font-light text-white/90 group-hover:text-white transition-colors">mielalabs@proton.me</div>
                   </div>
                 </a>
                 
-                <a href="tel:+14694009630" className="flex items-center gap-6 group">
+                <a href="tel:+14693217389" className="flex items-center gap-6 group">
                   <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#D4AF37]/20 group-hover:border-[#D4AF37]/50 transition-all">
                     <Phone className="w-6 h-6 text-white/70 group-hover:text-[#D4AF37] transition-colors" />
                   </div>
                   <div>
                     <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 font-bold mb-1">Direct Line</div>
-                    <div className="text-xl font-light text-white/90 group-hover:text-white transition-colors">+1 (469) 400-9630</div>
+                    <div className="text-xl font-light text-white/90 group-hover:text-white transition-colors">+1 (469) 321-7389</div>
                   </div>
                 </a>
               </div>
