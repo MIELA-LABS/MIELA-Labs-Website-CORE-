@@ -57,17 +57,19 @@ body {
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #D4AF37 0%, #E5D3B3 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #C5A059 0%, #E0C080 40%, #8B6508 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 15px rgba(139, 101, 8, 0.4));
 }
 
 .text-miela {
-  background: linear-gradient(to right, #FFFFFF 0%, #D1D5DB 100%);
+  background: linear-gradient(to right, #FF007F 0%, #7928CA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 127, 0.5));
 }
 
 .text-gradient-tech {
