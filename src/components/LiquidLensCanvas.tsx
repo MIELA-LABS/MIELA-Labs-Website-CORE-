@@ -330,25 +330,9 @@ export default function LiquidLensCanvas() {
       />
 
       {/* UI Overlay */}
-      <div className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between p-6 md:p-10 mix-blend-difference text-white">
-        <div className="font-syncopate font-bold text-xl md:text-2xl tracking-tighter uppercase">
-          LIQUID_LENS
-        </div>
-        
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-inter text-[10px] tracking-[3px] uppercase opacity-0 group-hover:opacity-60 transition-opacity duration-500">
-          [ CLICK TO UPLOAD IMAGE ]
-        </div>
-
-        <div className="flex justify-between items-end font-inter text-[9px] md:text-[11px] tracking-widest leading-relaxed opacity-80">
-          <div>
-            SHADER: RGB_DISPLACEMENT<br/>
-            NOISE: SIMPLEX_FBM<br/>
-            STATUS: ACTIVE
-          </div>
-          <div className="text-right">
-            DRAG TO DISTORT<br/>
-            SCROLL TO ZOOM
-          </div>
+      <div className="absolute inset-0 pointer-events-none z-10 flex items-center justify-center p-6 md:p-10 mix-blend-difference text-white">
+        <div className="font-inter text-[12px] md:text-[14px] tracking-[4px] uppercase opacity-80 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 px-6 py-3 rounded-full border border-white/20 backdrop-blur-sm">
+          [ CLICK HERE TO UPLOAD IMAGE ]
         </div>
       </div>
 

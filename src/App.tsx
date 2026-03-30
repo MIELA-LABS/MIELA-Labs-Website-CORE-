@@ -343,75 +343,83 @@ export default function App() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
             {/* BitVid */}
-            <motion.a 
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="glass-panel p-12 rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-[#f7931a]/30 transition-colors duration-500 flex flex-col justify-between cursor-pointer block"
+              className="h-full"
             >
-              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(247,147,26,0.08)_0%,transparent_70%)] rounded-full blur-[60px] -translate-y-1/2 translate-x-1/3 pointer-events-none group-hover:bg-[radial-gradient(circle,rgba(247,147,26,0.15)_0%,transparent_70%)] transition-all duration-700" />
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-16">
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Hexagon className="w-5 h-5 text-[#f7931a]" />
-                      <span className="text-[10px] tracking-[0.3em] uppercase text-[#f7931a] font-bold">Decentralized Media</span>
+              <a 
+                href="https://github.com/MIELA-LABS/MPL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-panel p-12 rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-[#f7931a]/30 transition-colors duration-500 flex flex-col justify-between cursor-pointer block h-full"
+              >
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(247,147,26,0.08)_0%,transparent_70%)] rounded-full blur-[60px] -translate-y-1/2 translate-x-1/3 pointer-events-none group-hover:bg-[radial-gradient(circle,rgba(247,147,26,0.15)_0%,transparent_70%)] transition-all duration-700" />
+                <div className="relative z-10">
+                  <div className="flex justify-between items-start mb-16">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <Hexagon className="w-5 h-5 text-[#f7931a]" />
+                        <span className="text-[10px] tracking-[0.3em] uppercase text-[#f7931a] font-bold">Decentralized Media</span>
+                      </div>
+                      <h3 className="text-4xl font-magick font-bold">BitVid</h3>
                     </div>
-                    <h3 className="text-4xl font-magick font-bold">BitVid</h3>
                   </div>
+                  <p className="text-xl text-white/70 leading-relaxed mb-10 font-light">
+                    A revolutionary, decentralized video platform framework running entirely on <span className="text-white font-medium">Bitcoin (BTC)</span>. No fiat. No middlemen. Pure peer-to-peer value exchange.
+                  </p>
+                  <ul className="space-y-5 mb-12 text-sm text-white/50 font-light">
+                    <li className="flex items-start gap-4"><div className="w-1.5 h-1.5 rounded-full bg-[#f7931a] mt-1.5 shadow-[0_0_10px_rgba(247,147,26,0.8)]" /> ZERO barriers to entry. No subscriber thresholds.</li>
+                    <li className="flex items-start gap-4"><div className="w-1.5 h-1.5 rounded-full bg-[#f7931a] mt-1.5 shadow-[0_0_10px_rgba(247,147,26,0.8)]" /> Every creator earns fractional BTC based on pure engagement.</li>
+                    <li className="flex items-start gap-4"><div className="w-1.5 h-1.5 rounded-full bg-[#f7931a] mt-1.5 shadow-[0_0_10px_rgba(247,147,26,0.8)]" /> Supported by BitVid Plus ($1.99/mo) converted instantly to BTC.</li>
+                  </ul>
                 </div>
-                <p className="text-xl text-white/70 leading-relaxed mb-10 font-light">
-                  A revolutionary, decentralized video platform framework running entirely on <span className="text-white font-medium">Bitcoin (BTC)</span>. No fiat. No middlemen. Pure peer-to-peer value exchange.
-                </p>
-                <ul className="space-y-5 mb-12 text-sm text-white/50 font-light">
-                  <li className="flex items-start gap-4"><div className="w-1.5 h-1.5 rounded-full bg-[#f7931a] mt-1.5 shadow-[0_0_10px_rgba(247,147,26,0.8)]" /> ZERO barriers to entry. No subscriber thresholds.</li>
-                  <li className="flex items-start gap-4"><div className="w-1.5 h-1.5 rounded-full bg-[#f7931a] mt-1.5 shadow-[0_0_10px_rgba(247,147,26,0.8)]" /> Every creator earns fractional BTC based on pure engagement.</li>
-                  <li className="flex items-start gap-4"><div className="w-1.5 h-1.5 rounded-full bg-[#f7931a] mt-1.5 shadow-[0_0_10px_rgba(247,147,26,0.8)]" /> Supported by BitVid Plus ($1.99/mo) converted instantly to BTC.</li>
-                </ul>
-              </div>
-              <div className="relative z-10 inline-flex items-center justify-between w-full p-6 rounded-xl bg-white/[0.03] border border-white/10 group-hover:bg-white/10 transition-colors group/btn mt-auto">
-                <span className="text-xs tracking-[0.2em] uppercase font-bold text-white/80">Explore Protocol</span>
-                <ExternalLink className="w-5 h-5 text-[#f7931a] group-hover/btn:scale-110 transition-transform" />
-              </div>
-            </motion.a>
+                <div className="relative z-10 inline-flex items-center justify-between w-full p-6 rounded-xl bg-white/[0.03] border border-white/10 group-hover:bg-white/10 transition-colors group/btn mt-auto">
+                  <span className="text-xs tracking-[0.2em] uppercase font-bold text-white/80">Explore Protocol</span>
+                  <ExternalLink className="w-5 h-5 text-[#f7931a] group-hover/btn:scale-110 transition-transform" />
+                </div>
+              </a>
+            </motion.div>
 
             {/* Shiloh Market */}
-            <motion.a 
-              href="https://shilohmarket.us"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.2 }}
-              className="glass-panel p-12 rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-[#9D4EDD]/30 transition-colors duration-500 flex flex-col justify-between cursor-pointer block"
+              className="h-full"
             >
-              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(157, 78, 221,0.08)_0%,transparent_70%)] rounded-full blur-[60px] translate-y-1/3 -translate-x-1/3 pointer-events-none group-hover:bg-[radial-gradient(circle,rgba(157, 78, 221,0.15)_0%,transparent_70%)] transition-all duration-700" />
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-16">
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Hexagon className="w-5 h-5 text-[#9D4EDD]" />
-                      <span className="text-[10px] tracking-[0.3em] uppercase text-[#9D4EDD] font-bold">Hyper-Local Commerce</span>
+              <a 
+                href="https://shilohmarket.us"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-panel p-12 rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-[#9D4EDD]/30 transition-colors duration-500 flex flex-col justify-between cursor-pointer block h-full"
+              >
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(157, 78, 221,0.08)_0%,transparent_70%)] rounded-full blur-[60px] translate-y-1/3 -translate-x-1/3 pointer-events-none group-hover:bg-[radial-gradient(circle,rgba(157, 78, 221,0.15)_0%,transparent_70%)] transition-all duration-700" />
+                <div className="relative z-10">
+                  <div className="flex justify-between items-start mb-16">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <Hexagon className="w-5 h-5 text-[#9D4EDD]" />
+                        <span className="text-[10px] tracking-[0.3em] uppercase text-[#9D4EDD] font-bold">Hyper-Local Commerce</span>
+                      </div>
+                      <h3 className="text-4xl font-magick font-bold">Shiloh Market</h3>
                     </div>
-                    <h3 className="text-4xl font-magick font-bold">Shiloh Market</h3>
                   </div>
+                  <p className="text-xl text-white/70 leading-relaxed mb-8 font-light">
+                    A hyper-local web, iOS, and Android application built exclusively for the Shiloh Lakes community in McKinney, Texas.
+                  </p>
+                  <p className="text-white/50 leading-relaxed text-base font-light mb-12">
+                    A platform where verified local residents can share and sell their homemade food directly to neighbors, strictly following Texas cottage food laws. A simple, effective, and socially impactful community tool.
+                  </p>
                 </div>
-                <p className="text-xl text-white/70 leading-relaxed mb-8 font-light">
-                  A hyper-local web, iOS, and Android application built exclusively for the Shiloh Lakes community in McKinney, Texas.
-                </p>
-                <p className="text-white/50 leading-relaxed text-base font-light mb-12">
-                  A platform where verified local residents can share and sell their homemade food directly to neighbors, strictly following Texas cottage food laws. A simple, effective, and socially impactful community tool.
-                </p>
-              </div>
-              <div className="relative z-10 inline-flex items-center justify-between w-full p-6 rounded-xl bg-white/[0.03] border border-white/10 group-hover:bg-white/10 transition-colors group/btn">
-                <span className="text-xs tracking-[0.2em] uppercase font-bold text-white/80">Visit Marketplace</span>
-                <ExternalLink className="w-5 h-5 text-[#9D4EDD] group-hover/btn:scale-110 transition-transform" />
-              </div>
-            </motion.a>
+                <div className="relative z-10 inline-flex items-center justify-between w-full p-6 rounded-xl bg-white/[0.03] border border-white/10 group-hover:bg-white/10 transition-colors group/btn mt-auto">
+                  <span className="text-xs tracking-[0.2em] uppercase font-bold text-white/80">Visit Marketplace</span>
+                  <ExternalLink className="w-5 h-5 text-[#9D4EDD] group-hover/btn:scale-110 transition-transform" />
+                </div>
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
