@@ -222,8 +222,8 @@ export default function App() {
             </motion.div>
             
             <h1 className="text-8xl md:text-[10rem] lg:text-[13rem] font-magick font-bold tracking-tighter leading-[0.8] mb-12 relative z-10">
-              <span className="text-miela inline-block transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-default">MIELA</span> <br />
-              <span className="text-gradient-gold text-6xl md:text-8xl lg:text-[9rem] tracking-[0.15em] block mt-4 inline-block transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-default">
+              <span className="text-gradient-gold inline-block transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-default">MIELA</span> <br />
+              <span className="text-miela text-6xl md:text-8xl lg:text-[9rem] tracking-[0.15em] block mt-4 inline-block transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-default">
                 LABS
               </span>
             </h1>
