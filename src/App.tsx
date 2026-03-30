@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Terminal, Code2, Cpu, Globe, ArrowRight, Github, ExternalLink, Sparkles, Hexagon, Network, BrainCircuit, Palette, Maximize2, X, Mail, Phone, Send } from 'lucide-react';
+import { ArrowRight, ExternalLink, Hexagon, Maximize2, X, Send, Mail, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 import MysticAura from './components/MysticAura';
@@ -10,9 +10,38 @@ import QuantumNebulaCanvas from './components/QuantumNebulaCanvas';
 import LiquidLensCanvas from './components/LiquidLensCanvas';
 import DeepFlowCanvas from './components/DeepFlowCanvas';
 import GalleryView from './components/GalleryView';
+import TechBadge from './components/TechBadge';
 import { ayahuascaFrag } from './shaders/ayahuasca';
 import { unifiedShipiboFrag } from './shaders/unifiedShipibo';
 import { burntPlasmaFrag } from './shaders/burntPlasma';
+
+const artTech = [
+  { name: "React", icon: "https://cdn.simpleicons.org/react/white" },
+  { name: "Three.js", icon: "https://cdn.simpleicons.org/threedotjs/white" },
+  { name: "WebGL", icon: "https://cdn.simpleicons.org/webgl/white" },
+  { name: "GLSL", icon: "https://cdn.simpleicons.org/opengl/white" },
+  { name: "Framer Motion", icon: "https://cdn.simpleicons.org/framer/white" },
+  { name: "TailwindCSS", icon: "https://cdn.simpleicons.org/tailwindcss/white" },
+  { name: "GSAP", icon: "https://cdn.simpleicons.org/greensock/white" }
+];
+
+const aiTech = [
+  { name: "Llama 3", icon: "https://cdn.simpleicons.org/meta/white" },
+  { name: "Llama.cpp", lucide: "Cpu" },
+  { name: "Ollama", icon: "https://cdn.simpleicons.org/ollama/white" },
+  { name: "LangChain", icon: "https://cdn.simpleicons.org/langchain/white" },
+  { name: "LlamaIndex", lucide: "Database" },
+  { name: "Llama Rails", lucide: "Network" },
+  { name: "ChromaDB", lucide: "Layers" },
+  { name: "DeepGram", lucide: "Mic" },
+  { name: "Guardrails AI", lucide: "ShieldCheck" },
+  { name: "Evidently.AI", lucide: "LineChart" },
+  { name: "ragas", lucide: "Activity" },
+  { name: "DeepEval", lucide: "CheckCircle" },
+  { name: "Jenkins", icon: "https://cdn.simpleicons.org/jenkins/white" },
+  { name: "PyTorch", icon: "https://cdn.simpleicons.org/pytorch/white" },
+  { name: "Rust", icon: "https://cdn.simpleicons.org/rust/white" }
+];
 
 const digitalArtifacts = [
   { 
@@ -59,16 +88,13 @@ const digitalArtifacts = [
   }
 ];
 
-const PillarHeader = ({ title, subtitle, number, color = "#C5A059" }: { title: string, subtitle: string, number: string, color?: string }) => (
-  <div className="mb-24 relative">
-    <div className="absolute -top-16 -left-8 md:-top-32 md:-left-16 text-[10rem] md:text-[20rem] font-magick font-bold text-white/[0.02] select-none pointer-events-none leading-none">
-      {number}
-    </div>
-    <div className="relative z-10 flex items-center gap-4 mb-6">
+const PillarHeader = ({ title, subtitle, color = "#C5A059" }: { title: string, subtitle: string, color?: string }) => (
+  <div className="mb-16 relative">
+    <div className="relative z-10 flex items-center gap-4 mb-4">
       <div className="w-12 h-[1px]" style={{ backgroundColor: color }} />
-      <h2 className="text-xs tracking-[0.4em] uppercase font-bold" style={{ color }}>{subtitle}</h2>
+      <h2 className="text-[10px] tracking-[0.4em] uppercase font-bold" style={{ color }}>{subtitle}</h2>
     </div>
-    <h3 className="text-5xl md:text-7xl lg:text-8xl font-magick font-bold relative z-10 uppercase tracking-tighter leading-[0.9]">
+    <h3 className="text-3xl md:text-4xl lg:text-5xl font-magick font-bold relative z-10 uppercase tracking-tighter leading-[0.9]">
       {title}
     </h3>
   </div>
@@ -166,10 +192,10 @@ export default function App() {
             />
           </motion.div>
           <div className="hidden md:flex gap-8 text-[10px] tracking-[0.3em] uppercase text-white/60 font-medium">
-            <a href="#art" className="hover:text-[#4C1D95] transition-colors">01. Digital Art</a>
-            <a href="#community" className="hover:text-[#f7931a] transition-colors">02. Community</a>
-            <a href="#ai" className="hover:text-[#9D4EDD] transition-colors">03. Intelligence</a>
-            <a href="#contact" className="hover:text-[#D4AF37] transition-colors">04. Contact</a>
+            <a href="#art" className="hover:text-[#4C1D95] transition-colors">Digital Art</a>
+            <a href="#community" className="hover:text-[#f7931a] transition-colors">Community</a>
+            <a href="#ai" className="hover:text-[#9D4EDD] transition-colors">Intelligence</a>
+            <a href="#contact" className="hover:text-[#D4AF37] transition-colors">Contact</a>
           </div>
         </div>
       </nav>
@@ -195,13 +221,13 @@ export default function App() {
               <div className="w-12 h-[1px] bg-[#8B5CF6]/50" />
             </motion.div>
             
-            <h1 className="text-7xl md:text-[10rem] lg:text-[12rem] font-magick font-bold tracking-tighter leading-[0.8] mb-8">
-              <span className="text-miela">MIELA</span> <br />
-              <span className="text-gradient-gold text-5xl md:text-[6rem] lg:text-[7rem] tracking-[0.15em] block mt-2">
+            <h1 className="text-8xl md:text-[10rem] lg:text-[13rem] font-magick font-bold tracking-tighter leading-[0.8] mb-12 relative z-10">
+              <span className="text-miela inline-block transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-default">MIELA</span> <br />
+              <span className="text-gradient-gold text-6xl md:text-8xl lg:text-[9rem] tracking-[0.15em] block mt-4 inline-block transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-default">
                 LABS
               </span>
             </h1>
-            <p className="text-lg md:text-2xl text-white/60 max-w-4xl mx-auto font-light leading-relaxed mb-16 tracking-wide">
+            <p className="text-xs md:text-sm lg:text-base text-white/60 max-w-3xl mx-auto font-sans font-light leading-relaxed mb-16 tracking-wide">
               Architecting high-performance digital experiences, custom software solutions, and cutting-edge web applications. We specialize in GenAI, RAG orchestration, AI governance, and TEVV (Testing, Evaluation, Verification, and Validation). Our software architectures are fully AI-driven, integrating the world's most advanced models to transform complex business challenges into elegant, scalable, and immersive technological realities.
             </p>
             
@@ -228,30 +254,38 @@ export default function App() {
       </section>
 
       {/* PILLAR 01: DIGITAL ART & INNOVATION */}
-      <section id="art" className="py-32 px-6 relative z-10 border-t border-white/5">
+      <section id="art" className="py-16 px-6 relative z-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <PillarHeader number="01" subtitle="Creative Engineering" title="Digital Art" color="#4C1D95" />
+          <PillarHeader subtitle="Creative Engineering" title="Digital Art" color="#4C1D95" />
           
           {/* The Digital Sorcery (Portfolio Grid) */}
-          <div className="mt-20">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="mt-8">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 mb-4">
-                  <Palette className="w-5 h-5 text-[#D4AF37]" />
+                  <Hexagon className="w-5 h-5 text-[#D4AF37]" />
                   <h2 className="text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] font-bold">Custom Digital Media Design</h2>
                 </div>
-                <h3 className="text-5xl md:text-6xl font-magick font-bold mb-6">Immersive Digital Experiences</h3>
+                <h3 className="text-4xl md:text-5xl font-magick font-bold mb-6">Immersive Digital Experiences</h3>
                 <p className="text-xl text-white/70 font-light leading-relaxed mb-8">
                   We don't just build websites; we engineer immersive digital environments. Whether you need to inject cutting-edge WebGL effects into your existing business platform, architect a complex web application from scratch, or code your wildest visions into reality, we are the catalyst. 
                 </p>
                 <p className="text-lg text-white/50 font-light leading-relaxed mb-8">
                   These are bespoke, high-performance digital architectures tailored for industry leaders.
                 </p>
+
+                {/* FRONTEND & GRAPHICS TECH STACK */}
+                <div className="flex flex-wrap gap-3 mb-10">
+                  {artTech.map(tech => (
+                    <TechBadge key={tech.name} tech={tech} color="#8B5CF6" />
+                  ))}
+                </div>
+
                 <a 
                   href="#contact"
                   className="glow-effect inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/5 border border-[#D4AF37]/30 text-xs tracking-[0.2em] uppercase font-bold hover:bg-[#D4AF37]/20 transition-all group/link text-[#D4AF37]"
                 >
-                  Initiate Project
+                  Explore Capabilities
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform" />
                 </a>
               </div>
@@ -303,11 +337,11 @@ export default function App() {
       />
 
       {/* PILLAR 02: COMMUNITY */}
-      <section id="community" className="py-32 px-6 relative z-10 border-t border-white/5">
+      <section id="community" className="py-16 px-6 relative z-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <PillarHeader number="02" subtitle="Decentralized Ecosystems" title="Community" color="#f7931a" />
+          <PillarHeader subtitle="Decentralized Ecosystems" title="Community" color="#f7931a" />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
             {/* BitVid */}
             <motion.a 
               href="#"
@@ -323,10 +357,10 @@ export default function App() {
                 <div className="flex justify-between items-start mb-16">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
-                      <Network className="w-5 h-5 text-[#f7931a]" />
+                      <Hexagon className="w-5 h-5 text-[#f7931a]" />
                       <span className="text-[10px] tracking-[0.3em] uppercase text-[#f7931a] font-bold">Decentralized Media</span>
                     </div>
-                    <h3 className="text-5xl font-magick font-bold">BitVid</h3>
+                    <h3 className="text-4xl font-magick font-bold">BitVid</h3>
                   </div>
                 </div>
                 <p className="text-xl text-white/70 leading-relaxed mb-10 font-light">
@@ -360,10 +394,10 @@ export default function App() {
                 <div className="flex justify-between items-start mb-16">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
-                      <Globe className="w-5 h-5 text-[#9D4EDD]" />
+                      <Hexagon className="w-5 h-5 text-[#9D4EDD]" />
                       <span className="text-[10px] tracking-[0.3em] uppercase text-[#9D4EDD] font-bold">Hyper-Local Commerce</span>
                     </div>
-                    <h3 className="text-5xl font-magick font-bold">Shiloh Market</h3>
+                    <h3 className="text-4xl font-magick font-bold">Shiloh Market</h3>
                   </div>
                 </div>
                 <p className="text-xl text-white/70 leading-relaxed mb-8 font-light">
@@ -383,16 +417,16 @@ export default function App() {
       </section>
 
       {/* PILLAR 03: ARTIFICIAL INTELLIGENCE */}
-      <section id="ai" className="py-32 px-6 relative z-10 border-t border-white/5 bg-[#1E1C22]/40">
+      <section id="ai" className="py-16 px-6 relative z-10 border-t border-white/5 bg-[#1E1C22]/40">
         <div className="max-w-7xl mx-auto">
-          <PillarHeader number="03" subtitle="Cognitive Architecture" title="Intelligence" color="#9D4EDD" />
+          <PillarHeader subtitle="Cognitive Architecture" title="Intelligence" color="#9D4EDD" />
           
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1 }}
-            className="mt-20 relative rounded-[3rem] border border-[#9D4EDD]/20 bg-gradient-to-b from-[#9D4EDD]/5 to-transparent overflow-hidden p-12 md:p-24"
+            className="mt-8 relative rounded-[3rem] border border-[#9D4EDD]/20 bg-gradient-to-b from-[#9D4EDD]/5 to-transparent overflow-hidden p-8 md:p-16"
           >
             {/* Abstract AI Background */}
             <div className="absolute inset-0 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
@@ -400,10 +434,10 @@ export default function App() {
             
             <div className="relative z-10 max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#9D4EDD]/30 bg-[#9D4EDD]/10 mb-8">
-                <BrainCircuit className="w-4 h-4 text-[#9D4EDD] animate-pulse" />
+                <Hexagon className="w-4 h-4 text-[#9D4EDD] animate-pulse" />
                 <span className="text-[10px] tracking-[0.2em] uppercase text-[#9D4EDD] font-bold">GenAI & RAG Orchestration</span>
               </div>
-              <h3 className="text-4xl md:text-6xl font-magick font-bold mb-8 leading-tight">
+              <h3 className="text-3xl md:text-5xl font-magick font-bold mb-8 leading-tight">
                 Architecting <br/>Autonomous Systems
               </h3>
               <p className="text-xl text-white/70 leading-relaxed mb-8 font-light">
@@ -412,6 +446,13 @@ export default function App() {
               <p className="text-lg text-white/50 leading-relaxed font-light">
                 We specialize in TEVV (Testing, Evaluation, Verification, and Validation) to ensure our hyper-specialized autonomous agents and predictive models operate securely and flawlessly. <span className="text-[#9D4EDD] italic">We are redefining human-computer symbiosis.</span>
               </p>
+
+              {/* AI & BACKEND TECH STACK */}
+              <div className="mt-12 pt-10 border-t border-white/10 flex flex-wrap justify-center gap-3">
+                {aiTech.map(tech => (
+                  <TechBadge key={tech.name} tech={tech} color="#9D4EDD" />
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -447,14 +488,14 @@ export default function App() {
       </AnimatePresence>
 
       {/* PILLAR 04: CONTACT */}
-      <section id="contact" className="py-32 px-6 relative z-10 border-t border-white/5 bg-[#13111A]">
+      <section id="contact" className="py-24 px-6 relative z-10 border-t border-white/5 bg-[#13111A]">
         <div className="max-w-7xl mx-auto">
-          <PillarHeader number="04" subtitle="Direct Communication" title="Partner With Us" color="#D4AF37" />
+          <PillarHeader subtitle="Direct Communication" title="Partner With Us" color="#D4AF37" />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
             {/* Contact Info */}
             <div>
-              <h3 className="text-4xl font-magick font-bold mb-6">Let's Build The Future.</h3>
+              <h3 className="text-3xl md:text-4xl font-magick font-bold mb-6">Let's Build The Future.</h3>
               <p className="text-xl text-white/60 font-light leading-relaxed mb-12">
                 Have an application idea? Need a mind-blowing website? Or want to inject high-end digital effects into your brand? Drop your vision below, and we'll code it into reality.
               </p>

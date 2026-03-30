@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cinzel", ui-serif, Georgia, serif;
   --font-syncopate: "Syncopate", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
   
   --color-background: #1E1C22;
   --color-foreground: #EAEAEA;
@@ -78,19 +79,23 @@ html.lenis, html.lenis body {
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #C5A059 0%, #E0C080 40%, #8B6508 100%);
+  background: linear-gradient(135deg, #F9F295 0%, #E0AA3E 25%, #B8860B 45%, #F9F295 70%, #8A5A19 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 15px rgba(139, 101, 8, 0.4));
+  filter: 
+    drop-shadow(1px 2px 0px rgba(138, 90, 25, 0.6))
+    drop-shadow(0px 10px 25px rgba(224, 170, 62, 0.2));
 }
 
 .text-miela {
-  background: linear-gradient(to right, #FF007F 0%, #7928CA 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 25%, #6B7280 45%, #F3F4F6 70%, #374151 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 20px rgba(255, 0, 127, 0.5));
+  filter: 
+    drop-shadow(1px 2px 0px rgba(75, 85, 99, 0.6))
+    drop-shadow(0px 10px 25px rgba(255, 255, 255, 0.1));
 }
 
 .text-gradient-tech {
