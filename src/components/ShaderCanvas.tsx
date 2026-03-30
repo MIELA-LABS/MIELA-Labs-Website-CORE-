@@ -80,8 +80,9 @@ export default function ShaderCanvas({ fragShader, className = '' }: ShaderCanva
     const render = () => {
       if (!isIntersecting) return;
 
-      const displayWidth = Math.floor(canvas.clientWidth / 2);
-      const displayHeight = Math.floor(canvas.clientHeight / 2);
+      const pixelRatio = window.devicePixelRatio || 1;
+      const displayWidth = Math.floor(canvas.clientWidth * pixelRatio);
+      const displayHeight = Math.floor(canvas.clientHeight * pixelRatio);
       
       if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
         canvas.width = displayWidth;

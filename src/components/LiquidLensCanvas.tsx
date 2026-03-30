@@ -196,8 +196,7 @@ export default function LiquidLensCanvas() {
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
-      // Render at half resolution for performance
-      const pixelRatio = 0.5;
+      const pixelRatio = window.devicePixelRatio || 1;
       canvas.width = rect.width * pixelRatio;
       canvas.height = rect.height * pixelRatio;
       gl.viewport(0, 0, canvas.width, canvas.height);
